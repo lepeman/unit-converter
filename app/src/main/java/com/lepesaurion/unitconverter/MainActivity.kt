@@ -54,9 +54,21 @@ class MainActivity : ComponentActivity() {
 
             val selectedUnit = spinnerUnits.selectedItem.toString()
             val result = when (selectedUnit) {
-                "Kilómetros a Millas" -> inputValue * 0.621371
-                "Metros a Pies" -> inputValue * 3.28084
-                "Centímetros a Pulgadas" -> inputValue * 0.393701
+                // Longitud
+                "Kilómetros a Millas" -> UnitConverter.kilometersToMiles(inputValue)
+                "Metros a Pies" -> UnitConverter.metersToFeet(inputValue)
+                "Centímetros a Pulgadas" -> UnitConverter.centimetersToInches(inputValue)
+
+                // Masa
+                "Kilogramos a Libras" -> UnitConverter.kilogramsToPounds(inputValue)
+                "Gramos a Onzas" -> UnitConverter.gramsToOunces(inputValue)
+                "Toneladas a Toneladas Cortas" -> UnitConverter.tonsToShortTons(inputValue)
+
+                // Volumen
+                "Litros a Galones" -> UnitConverter.litersToGallons(inputValue)
+                "Mililitros a Onzas Líquidas" -> UnitConverter.millilitersToFluidOunces(inputValue)
+                "Metros Cúbicos a Pies Cúbicos" -> UnitConverter.cubicMetersToCubicFeet(inputValue)
+
                 else -> 0.0
             }
 
