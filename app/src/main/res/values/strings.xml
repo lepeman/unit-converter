@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Unit Converter</string>
+    <string-array name="conversiotn_types">
+        <item>Longitud</item>
+        <item>Masa</item>
+        <item>Volumen</item>
+    </string-array>
+
+    <string-array name="units_length">
+        <item>Kilómetros a Millas</item>
+        <item>Metros a Pies</item>
+        <item>Centímetros a Pulgadas</item>
+    </string-array>
+
+    <string-array name="units_mass">
+        <item>Kilogramos a Libras</item>
+        <item>Gramos a Onzas</item>
+        <item>Toneladas a Toneladas Cortas</item>
+    </string-array>
+
+    <string-array name="units_volume">
+        <item>Litros a Galones</item>
+        <item>Mililitros a Onzas Líquidas</item>
+        <item>Metros Cúbicos a Pies Cúbicos</item>
+    </string-array>
+</resources>
