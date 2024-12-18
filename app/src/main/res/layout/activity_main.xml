@@ -1,47 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Nombre del archivo: activity_main.xml
+    Autor: Luis Ortega Lepe
+    Fecha creación: 2024-12-17
+    Última actualización: 2024-12-18
+    Descripción: Diseño de la interfaz principal de la aplicación de conversión de unidades.
+    Incluye campos para seleccionar el tipo de conversion, unidades, ingresar valores,
+    un botón para ejecutar la conversión y un área para mostrar el resultado.
+
+    Componentes:
+    - Selector de tipo de conversión (AutoCompleteTextView).
+    - Selector de unidades de conversión (AutoCompleteTextView).
+    - Campo de entrada para el valor a convertir (TextInputEditText).
+    - Botón de conversión (MaterialButton).
+    - Área de resultado (TextView).
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <!-- Selector de tipo de conversion -->
-    <Spinner
-        android:id="@+id/spinner_conversion_type"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/conversiotn_types" />
+        android:layout_height="60dp"
+        android:text="@string/app_name"
+        android:padding="8dp"
+        android:gravity="center"
+        android:textSize="28sp"
+        style="@style/TextAppearance.UnitConverter.TitleLarge"/>
 
-    <!-- Selector de unidades -->
-    <Spinner
-        android:id="@+id/spinner_units"
+    <!-- Selector de tipo de conversion -->
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16.dp" />
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/dropdown_conversion_type"
+        android:hint="@string/conversion_type"
+        android:padding="8dp"
+        app:startIconDrawable="@drawable/straighten_16dp"
+        app:endIconMode="dropdown_menu">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdown_conversion_type"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Dropdown para las unidades -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/dropdown_units"
+        android:hint="@string/dropdown_units"
+        android:padding="8dp"
+        app:startIconDrawable="@drawable/square_foot_16dp"
+        app:endIconMode="dropdown_menu">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdown_units"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Campo para ingresar el valor -->
-    <EditText
-        android:id="@+id/edit_value"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingresa el valor"
-        android:inputType="numberDecimal"
-        android:layout_marginTop="16dp" />
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/edit_value"
+        android:hint="@string/edit_text_hint"
+        android:padding="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_value"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Botón para convertir -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_convert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Convertir"
-        android:layout_marginTop="16dp" />
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/button_convert"
+        android:layout_gravity="center"
+        android:textSize="28sp"
+        style="@style/Widget.Material3.Button"
+        android:backgroundTint="@color/md_theme_primary"
+        android:textColor="@color/md_theme_onPrimary" />
 
     <!-- Resultado -->
     <TextView
         android:id="@+id/textViewResult"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Resultado"
+        android:text="@string/text_view_result"
         android:textSize="18sp"
         android:layout_marginTop="16dp"/>
 

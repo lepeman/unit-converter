@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Unit Converter</string>
+    <string name="conversion_type">Tipo de Conversión</string>
+    <string name="dropdown_units">Unidad</string>
+    <string name="button_convert">Convertir</string>
+    <string name="edit_text_hint">Ingresa el valor</string>
+    <string name="text_view_result">Resultado</string>
     <string-array name="conversiotn_types">
         <item>Longitud</item>
         <item>Masa</item>

@@ -1,58 +1,58 @@
 package com.lepesaurion.unitconverter
 
+/**
+ *
+ * Título del proyecto: UnitConverter
+ * Descripción: Aplicación para conversión de unidades
+ * Autor: Luis Ortega Lepe
+ * Emailo: a.ortega.lepe@gmail.com
+ */
+
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import com.lepesaurion.unitconverter.databinding.ActivityMainBinding
+
+
 
 class MainActivity : ComponentActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val spinnerConversionType = findViewById<Spinner>(R.id.spinner_conversion_type)
-        val spinnerUnits = findViewById<Spinner>(R.id.spinner_units)
-        val editTextValue = findViewById<EditText>(R.id.edit_value)
-        val buttonConverter = findViewById<Button>(R.id.button_convert)
-        val textViewResult = findViewById<TextView>(R.id.textViewResult)
+        // Configurar el dropdown para el tipo de conversion
+        val conversionTypes = resources.getStringArray(R.array.conversiotn_types)
+        val conversionAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, conversionTypes)
+        binding.dropdownConversionType.setAdapter(conversionAdapter)
 
-        // Configura los spinners
-        spinnerConversionType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                val unitsArray = when (position) {
-                    0 -> R.array.units_length  // Longitud
-                    1 -> R.array.units_mass     // Masa
-                    2 -> R.array.units_volume   // Volumen
-                    else -> R.array.units_length
-                }
-                ArrayAdapter.createFromResource(
-                    this@MainActivity,
-                    unitsArray,
-                    android.R.layout.simple_spinner_item
-                ).also { adapter ->
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                    spinnerUnits.adapter = adapter
-                }
+        // Configurar el dropdown para la unidades
+        binding.dropdownConversionType.setOnItemClickListener { _, _, position, _ ->
+            val unitsArray = when (position) {
+                0 -> R.array.units_length
+                1 -> R.array.units_mass
+                2 -> R.array.units_volume
+                else -> R.array.units_length
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
+            val units = resources.getStringArray(unitsArray)
+            val unitsAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, units)
+            binding.dropdownUnits.setAdapter(unitsAdapter)
         }
 
-        // Configura el botón
-        buttonConverter.setOnClickListener {
-            val inputValue = editTextValue.text.toString().toDoubleOrNull()
+        // Configurar el botón de conversión
+        binding.buttonConvert.setOnClickListener {
+            val inputValue = binding.editValue.text.toString().toDoubleOrNull()
             if (inputValue == null) {
                 Toast.makeText(this, "Por favor, ingresa un valor válido.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val selectedUnit = spinnerUnits.selectedItem.toString()
+            val selectedUnit = binding.dropdownUnits.text.toString()
             val result = when (selectedUnit) {
                 // Longitud
                 "Kilómetros a Millas" -> UnitConverter.kilometersToMiles(inputValue)
@@ -72,7 +72,7 @@ class MainActivity : ComponentActivity() {
                 else -> 0.0
             }
 
-            textViewResult.text = "Resultado: $result"
+            binding.textViewResult.text = "Resultado: $result"
         }
     }
 }

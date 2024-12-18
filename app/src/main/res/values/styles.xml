@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DISPLAY STYLE -->
+    <style name="TextAppearance.UnitConverter.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <!-- HEADLINE STYLE -->
+    <style name="TextAppearance.UnitConverter.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <!-- TITLE STYLE -->
+    <style name="TextAppearance.UnitConverter.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.TitleSamall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/merriweather</item>
+        <item name="android:fontFamily">@font/merriweather</item>
+    </style>
+
+    <!-- BODY STYLE -->
+    <style name="TextAppearance.UnitConverter.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <!-- LABEL STYLE -->
+    <style name="TextAppearance.UnitConverter.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="TextAppearance.UnitConverter.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+</resources>
