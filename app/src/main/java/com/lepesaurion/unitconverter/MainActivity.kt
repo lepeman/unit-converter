@@ -39,6 +39,10 @@ class MainActivity : ComponentActivity() {
                 else -> R.array.units_length
             }
 
+            // Se reinicia los campos de unidad, valor y resultado.
+            binding.dropdownUnits.setText("")
+            binding.editValue.setText("")
+            binding.textViewResult.text = ""
             val units = resources.getStringArray(unitsArray)
             val unitsAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, units)
             binding.dropdownUnits.setAdapter(unitsAdapter)
